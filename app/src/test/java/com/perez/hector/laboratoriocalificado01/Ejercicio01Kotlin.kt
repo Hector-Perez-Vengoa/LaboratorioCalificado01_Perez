@@ -1,31 +1,31 @@
 package com.perez.hector.laboratoriocalificado01
 
-
-// Función que verifica si dos palabras son anagramas
-fun esAnagrama(p1: String, p2: String): Boolean {
-    // Si las longitudes son diferentes, no pueden ser anagramas
-    if (p1.length != p2.length) {
-        return false
-    }
-    // Convertimos ambas palabras a arrays de caracteres, las ordenamos y comparamos
-    return p1.toCharArray().sorted() == p2.toCharArray().sorted()
-}
-
-// Función para realizar las pruebas de anagramas
-
-// Función principal que permite la ejecución del programa
 fun main() {
-    // Solicitamos al usuario que ingrese las palabras
+
+    // Solicitamos al usuario que ingrese la primera palabra
     println("Ingrese la primera palabra:")
+
+    // Leemos la entrada del usuario y la convertimos a minúsculas.
+    // Si no hay entrada, asignamos un string vacío.
     val palabra1 = readLine()?.lowercase() ?: ""
 
+    // Solicitamos al usuario que ingrese la segunda palabra
     println("Ingrese la segunda palabra:")
+
+    // Leemos la entrada del usuario y la convertimos a minúsculas.
+    // Si no hay entrada, asignamos un string vacío.
     val palabra2 = readLine()?.lowercase() ?: ""
 
-    // Verificamos si son anagramas y mostramos el resultado
-    val resultado = esAnagrama(palabra1, palabra2)
-    println("¿Son anagramas?: $resultado")
+    // Convertimos ambas palabras en arrays de caracteres, las ordenamos y las comparamos
+    if (palabra1.toCharArray().sorted() == palabra2.toCharArray().sorted()){
+        // Si las palabras son iguales al ordenarlas, son anagramas
+        println("Si son anagramas")
+    }else{
+        // Si no son iguales, entonces no son anagramas
+        println("No son anagramas")
+    }
 }
+
 
 
 

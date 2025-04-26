@@ -1,6 +1,13 @@
 package com.perez.hector.laboratoriocalificado01
 
-fun contarVocales(texto: String): Int {
+// Función principal para interactuar con el usuario
+fun main() {
+    // Solicitar al usuario que ingrese una cadena de texto
+    println("Ingrese una cadena de texto:")
+
+    // Leemos el texto de la consola (si es nulo, usamos una cadena vacía)
+    val texto = readLine() ?: ""
+
     // Definimos las vocales en minúsculas para hacer la comparación más fácil
     val vocales = "aeiou"
 
@@ -13,24 +20,9 @@ fun contarVocales(texto: String): Int {
     // Recorremos cada carácter del texto
     for (caracter in textoMin) {
         // Si el carácter es una vocal, incrementamos el contador
-        if (caracter in vocales) {
-            contador++
-        }
+        if (caracter in vocales) { contador++ }
     }
 
-    // Devolvemos el número total de vocales encontradas
-    return contador
-}
-
-// Función principal para interactuar con el usuario
-fun main() {
-    // Solicitar al usuario que ingrese una cadena de texto
-    println("Ingrese una cadena de texto:")
-    val texto = readLine() ?: ""  // Leemos el texto de la consola (si es nulo, usamos una cadena vacía)
-
-    // Llamamos a la función para contar las vocales en el texto
-    val cantidadVocales = contarVocales(texto)
-
     // Mostramos el resultado
-    println("La cantidad de vocales es: $cantidadVocales")
+    println("La cantidad de vocales es: $contador")
 }
